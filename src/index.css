@@ -1,0 +1,201 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Permanent Marker', 'Big Shoulders Display', cursive;
+    --font-serif: 'Caveat', cursive;
+    --font-mono: 'Shantell Sans', 'Patrick Hand', cursive;
+    --font-hand: 'Caveat', cursive;
+  }
+
+  body {
+    font-family: var(--font-mono);
+    background-color: #FAF6EE;
+    color: #0A0A0A;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: 0.01em;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-serif-editorial {
+  font-family: var(--font-serif);
+}
+
+.font-mono-tech {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.font-hand {
+  font-family: var(--font-hand);
+}
+
+/* Horizontal Ruled Nursery Book / Primary Composition Paper Theme
+   Features bold Cobalt horizontal baselines, subtle dashed handwriting midlines,
+   and an iconic double Vermilion left margin rule — no vertical grid lines. */
+.bg-anticulture-canvas {
+  background-color: #FAF6EE;
+  background-image:
+    /* Double vertical red nursery-book margin rule on the left */
+    linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 44px,
+      rgba(255, 42, 0, 0.34) 44px,
+      rgba(255, 42, 0, 0.34) 46px,
+      transparent 46px,
+      transparent 51px,
+      rgba(255, 42, 0, 0.34) 51px,
+      rgba(255, 42, 0, 0.34) 53px,
+      transparent 53px
+    ),
+    /* Solid horizontal ruled nursery baselines */
+    linear-gradient(
+      to bottom,
+      transparent 46px,
+      rgba(0, 56, 255, 0.22) 46px,
+      rgba(0, 56, 255, 0.22) 48px
+    ),
+    /* Subtle mid-line guide for primary handwriting book feel */
+    linear-gradient(
+      to bottom,
+      transparent 23px,
+      rgba(0, 56, 255, 0.08) 23px,
+      rgba(0, 56, 255, 0.08) 24px,
+      transparent 24px
+    );
+  background-size: 100% 100%, 100% 48px, 100% 48px;
+  background-attachment: local;
+}
+
+/* Hand-inked Neo-Brutalist offset shadows with slight organic border radius */
+.shadow-brutal-black {
+  box-shadow: 7px 7px 0px #0A0A0A;
+  border-radius: 6px 2px 8px 3px;
+}
+
+.shadow-brutal-cobalt {
+  box-shadow: 8px 8px 0px #0038FF;
+  border-radius: 6px 3px 7px 2px;
+}
+
+.shadow-brutal-vermilion {
+  box-shadow: 8px 8px 0px #FF2A00;
+  border-radius: 4px 8px 3px 6px;
+}
+
+.shadow-brutal-gold {
+  box-shadow: 8px 8px 0px #FFD600;
+  border-radius: 7px 3px 6px 4px;
+}
+
+.shadow-brutal-emerald {
+  box-shadow: 8px 8px 0px #00C853;
+  border-radius: 5px 7px 3px 6px;
+}
+
+/* Polychromatic Faulty Night-Light / High-Voltage Daylight Tube Flicker */
+@keyframes polychrome-faulty-light {
+  0%, 16%, 20%, 24%, 52%, 56%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px rgba(255, 42, 0, 0.85))
+            drop-shadow(0 0 18px rgba(255, 214, 0, 0.75))
+            drop-shadow(4px 4px 0px rgba(0, 56, 255, 0.9));
+  }
+  17%, 22% {
+    opacity: 0.22;
+    filter: drop-shadow(2px 2px 0px rgba(10, 10, 10, 0.4));
+  }
+  18% {
+    opacity: 0.95;
+    filter: drop-shadow(0 0 14px rgba(0, 56, 255, 0.95))
+            drop-shadow(-3px 3px 0px rgba(255, 42, 0, 1));
+  }
+  23% {
+    opacity: 0.14;
+    filter: none;
+  }
+  53% {
+    opacity: 0.35;
+    filter: drop-shadow(0 0 8px rgba(0, 200, 83, 0.8));
+  }
+  54% {
+    opacity: 1;
+    filter: drop-shadow(0 0 16px rgba(213, 0, 249, 0.9))
+            drop-shadow(3px 3px 0px #0A0A0A);
+  }
+  55% {
+    opacity: 0.28;
+  }
+  78% {
+    opacity: 0.94;
+  }
+  79% {
+    opacity: 0.4;
+    filter: drop-shadow(0 0 10px rgba(255, 214, 0, 0.9));
+  }
+  80% {
+    opacity: 1;
+  }
+}
+
+@keyframes faulty-ambient-halo {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+  19%, 24%, 54%, 56% {
+    opacity: 0.15;
+    transform: scale(0.95);
+  }
+  20%, 55%, 79% {
+    opacity: 0.48;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes cursor-underscore-blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+.faulty-glow-tube {
+  animation: polychrome-faulty-light 5.8s infinite;
+}
+
+.faulty-glow-tube-delayed {
+  animation: polychrome-faulty-light 4.7s infinite 0.9s;
+}
+
+.faulty-glow-tube-fast {
+  animation: polychrome-faulty-light 3.9s infinite 0.35s;
+}
+
+.faulty-halo {
+  animation: faulty-ambient-halo 5.8s infinite;
+}
+
+.blink-underscore {
+  animation: cursor-underscore-blink 0.95s steps(1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
